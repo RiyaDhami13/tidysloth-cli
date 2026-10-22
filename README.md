@@ -1,17 +1,17 @@
-# tidysloth-cli
+# 🦥 tidysloth-cli
 
-A local-first Python file-organizer CLI that cleans up digital clutter at sloth speed.
+A local-first Python file-organizer CLI that cleans up digital clutter at sloth speed. Built with **GitHub Copilot**.
 
 ## Features
 
 - Organizes files into category folders: `Code`, `Documents`, `Images`, `Archives`, and `Others`
-- Uses `pathlib` for path handling and `argparse` for CLI parsing
+- Uses `pathlib` for safe path handling and `argparse` for CLI parsing
 - Supports a non-destructive preview mode with `--dry-run`
-- Generates a markdown summary index (`TIDY_INDEX.md`) for both scan and tidy runs
+- Generates a clean markdown summary index (`TIDY_INDEX.md`) for both scan and tidy runs
 
 ## Requirements
 
-- Python 3.9+
+- Python 3.8+
 
 ## Usage
 
@@ -26,7 +26,7 @@ python tidysloth.py --help
 Scans files and writes `TIDY_INDEX.md` with category counts and file listings.
 
 ```bash
-python tidysloth.py scan /path/to/target
+python tidysloth.py scan --path ./target_folder
 ```
 
 If no target is provided, the current directory is used:
@@ -40,7 +40,7 @@ python tidysloth.py scan
 Moves files into category subfolders and updates `TIDY_INDEX.md`.
 
 ```bash
-python tidysloth.py tidy /path/to/target
+python tidysloth.py tidy --path ./target_folder
 ```
 
 ### Dry run
@@ -48,14 +48,14 @@ python tidysloth.py tidy /path/to/target
 Preview all move operations without changing any files:
 
 ```bash
-python tidysloth.py tidy /path/to/target --dry-run
+python tidysloth.py tidy --path ./target_folder --dry-run
 ```
 
 ## File categorization
 
 - **Code**: common source/config/markup extensions (for example `.py`, `.js`, `.ts`, `.json`, `.yaml`, `.md`)
 - **Documents**: office/text data (for example `.pdf`, `.docx`, `.txt`, `.csv`)
-- **Images**: common image formats (for example `.png`, `.jpg`, `.svg`)
+- **Images**: common image formats (for example `.png`, `.jpg`, `.svg`, `.webp`)
 - **Archives**: compressed bundles (for example `.zip`, `.tar`, `.gz`, `.7z`)
 - **Others**: everything else
 
